@@ -1,0 +1,339 @@
+# Your Florence Home — Free Website
+
+This is a static website for the three studios A1, A2 and A3 at Via dell'Albero 16, Florence.
+
+## Before publishing
+1. Open `index.html`.
+2. Replace `https://wa.me/YOURNUMBER` with the real WhatsApp link (country code + number, no spaces or `+`).
+3. Replace `YOUREMAIL@example.com` with the real email address.
+4. Replace the `[ADD DISTANCE]` placeholders with exact walking times.
+5. Optional: add a real Google Maps embed/screenshot in the Location section.
+
+## Publish for free with GitHub Pages
+1. Create a free GitHub account.
+2. Create a new **public** repository, e.g. `your-florence-home`.
+3. Upload `index.html` and the entire `images` folder.
+4. In the repository go to **Settings → Pages**.
+5. Under the publishing source select **Deploy from a branch**, choose `main` and `/ (root)`, then Save.
+6. GitHub will give you a URL similar to:
+   `https://YOURUSERNAME.github.io/your-florence-home/`
+7. Open the URL on your phone and test it.
+8. Only after the URL works, create the QR code for that URL.
+
+The QR code should point to the published website URL, not to a local file.
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Florence Home — Private Studios in Florence</title>
+  <meta name="description" content="Three private furnished studios at Via dell'Albero 16, Florence. €1,200/month, all bills included. Available from November 2026.">
+  <meta name="theme-color" content="#12273a">
+  <style>
+    :root{
+      --navy:#12273a; --terracotta:#b25c43; --gold:#ddad4e;
+      --cream:#f8f4ec; --ink:#2a3034; --muted:#6d6d6d; --white:#fff;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;font-weight:700;color:var(--terracotta)}
+    h1,h2,h3{margin:0;line-height:1.05}
+    h1{font-size:clamp(3.2rem,8vw,6.8rem);letter-spacing:-.045em}
+    h2{font-size:clamp(2rem,4vw,3.7rem);letter-spacing:-.03em;color:var(--navy)}
+    h3{font-size:1.55rem;color:var(--navy)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;font-weight:800;font-size:.86rem;letter-spacing:.03em}
+    .btn-gold{background:var(--gold);color:var(--navy)}
+    .btn-navy{background:var(--navy);color:var(--white)}
+    .btn-outline{border:1px solid rgba(255,255,255,.45);color:#fff}
+    header{position:absolute;z-index:5;left:0;right:0;padding:24px 0;color:#fff}
+    nav{display:flex;justify-content:space-between;align-items:center}
+    .brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .navlinks{display:flex;gap:25px;font-size:.85rem;font-weight:700}
+    .navlinks a{opacity:.92}
+    .hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;background:var(--navy);color:#fff}
+    .hero-copy{display:flex;align-items:center;padding:110px max(30px,calc((100vw - var(--max))/2)) 70px max(30px,calc((100vw - var(--max))/2))}
+    .hero-copy-inner{max-width:570px}
+    .hero h1{color:#fff;margin:12px 0 20px}
+    .hero-sub{font-size:1.25rem;max-width:500px;margin:0 0 28px;color:#e9e4da}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px}
+    .chip{padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.1);font-size:.82rem;font-weight:700}
+    .hero-photo{min-height:650px}
+    section{padding:92px 0}
+    .section-head{max-width:760px;margin-bottom:42px}
+    .section-head p{font-size:1.08rem;color:var(--muted);margin-top:14px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(18,39,58,.08)}
+    .card-photo{height:320px;position:relative}
+    .tag{position:absolute;left:18px;bottom:18px;background:var(--navy);color:#fff;border-radius:999px;padding:8px 13px;font-size:.75rem;font-weight:800;letter-spacing:.08em}
+    .card-body{padding:24px}
+    .card-title{display:flex;justify-content:space-between;gap:15px;align-items:start}
+    .price{color:var(--terracotta);font-weight:900;white-space:nowrap}
+    .meta{color:var(--muted);font-size:.9rem;margin:12px 0 18px}
+    .features{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+    .feature{background:var(--cream);padding:7px 9px;border-radius:9px;font-size:.76rem;font-weight:700}
+    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:stretch}
+    .gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:10px;min-height:510px}
+    .gallery .big{grid-row:1 / span 2}
+    .gallery img{border-radius:20px}
+    .studio-copy{background:var(--white);border-radius:24px;padding:38px}
+    .studio-copy p{color:var(--muted);font-size:1.03rem}
+    .checklist{list-style:none;padding:0;margin:24px 0}
+    .checklist li{padding:9px 0;border-bottom:1px solid #eee}
+    .checklist li:last-child{border-bottom:0}
+    .price-large{font-size:2.3rem;color:var(--terracotta);font-weight:900}
+    .included{background:var(--navy);color:#fff}
+    .included h2{color:#fff}
+    .included .section-head p{color:#d8d5ce}
+    .amenities{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .amenity{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);padding:25px;border-radius:18px}
+    .amenity b{display:block;color:var(--gold);font-size:.78rem;letter-spacing:.1em;margin-bottom:8px}
+    .location{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .location-card{background:#fff;border-radius:24px;padding:35px}
+    .map-placeholder{min-height:350px;border-radius:24px;background:linear-gradient(135deg,#e8dfd2,#d8c9b6);display:grid;place-items:center;text-align:center;padding:30px;color:var(--navy)}
+    .map-placeholder strong{font-size:1.4rem}
+    .cta{background:var(--cream);padding-top:30px}
+    .cta-box{background:var(--navy);color:#fff;border-radius:30px;padding:55px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+    .cta-box h2{color:#fff}
+    .cta-box p{color:#d8d5ce;max-width:580px}
+    footer{background:#0c1c2a;color:#cdd0d2;padding:28px 0;font-size:.82rem}
+    .footer-row{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:850px){
+      .navlinks{display:none}
+      .hero{grid-template-columns:1fr}
+      .hero-photo{min-height:420px;order:-1}
+      .hero-copy{padding:55px 20px 70px}
+      .cards,.amenities,.location,.split{grid-template-columns:1fr}
+      .gallery{min-height:430px}
+      .cta-box,.footer-row{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:520px){
+      .container{width:min(var(--max),calc(100% - 28px))}
+      section{padding:65px 0}
+      .hero-copy{padding-left:14px;padding-right:14px}
+      .gallery{grid-template-columns:1fr 1fr;min-height:330px}
+      .gallery .big{grid-row:auto;grid-column:1 / span 2}
+      .gallery .small1,.gallery .small2{height:130px}
+      .cta-box{padding:34px 24px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#">Your Florence Home</a>
+      <div class="navlinks">
+        <a href="#studios">Studios</a>
+        <a href="#included">What's included</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="hero-copy-inner">
+        <div class="eyebrow" style="color:var(--gold)">Private studios for international students</div>
+        <h1>Your Florence Home</h1>
+        <p class="hero-sub">Three unique, fully furnished studios at one Florence address — designed for comfortable, independent living.</p>
+        <div class="chips">
+          <span class="chip">€1,200 / month</span>
+          <span class="chip">All bills included</span>
+          <span class="chip">35 m² each</span>
+          <span class="chip">Available November 2026</span>
+        </div>
+        <a class="btn btn-gold" href="#studios">EXPLORE THE STUDIOS ↓</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/A1.1.jpeg" alt="Studio A1 in Florence" loading="eager">
+    </div>
+  </section>
+
+  <section id="studios">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Choose your space</div>
+        <h2>Three studios. One great address.</h2>
+        <p>All three studios are approximately 35 m² and include the essentials for a comfortable stay in Florence.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-photo"><img src="images/A1.1.jpeg" alt="Studio A1" loading="lazy"><span class="tag">A1</span></div>
+          <div class="card-body">
+            <div class="card-title"><h3>Classic Florence</h3><span class="price">€1,200</span></div>
+            <div class="meta">35 m² · Via dell'Albero 16 · All bills included</div>
+            <div class="features"><span class="feature">Furnished</span><span class="feature">Kitchen</span><span class="feature">Wi-Fi</span><span class="feature">Washer & dryer</span></div>
+            <a class="btn btn-navy" href="#a1">VIEW A1 →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-photo"><img src="images/A2.2.jpeg" alt="Studio A2" loading="lazy"><span class="tag">A2</span></div>
+          <div class="card-body">
+            <div class="card-title"><h3>Urban & Cozy</h3><span class="price">€1,200</span></div>
+            <div class="meta">35 m² · Via dell'Albero 16 · All bills included</div>
+            <div class="features"><span class="feature">Furnished</span><span class="feature">Kitchen</span><span class="feature">Wi-Fi</span><span class="feature">Washer & dryer</span></div>
+            <a class="btn btn-navy" href="#a2">VIEW A2 →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-photo"><img src="images/A3.2.jpeg" alt="Studio A3" loading="lazy"><span class="tag">A3</span></div>
+          <div class="card-body">
+            <div class="card-title"><h3>Character & Charm</h3><span class="price">€1,200</span></div>
+            <div class="meta">35 m² · Via dell'Albero 16 · All bills included</div>
+            <div class="features"><span class="feature">Furnished</span><span class="feature">Kitchen</span><span class="feature">Wi-Fi</span><span class="feature">Washer & dryer</span></div>
+            <a class="btn btn-navy" href="#a3">VIEW A3 →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="a1">
+    <div class="container split">
+      <div class="gallery">
+        <img class="big" src="images/A1.1.jpeg" alt="Studio A1 main view" loading="lazy">
+        <img class="small1" src="images/A1.3.jpeg" alt="Studio A1 detail" loading="lazy">
+        <img class="small2" src="images/A1.5.jpeg" alt="Studio A1 interior" loading="lazy">
+      </div>
+      <div class="studio-copy">
+        <div class="eyebrow">Studio A1</div>
+        <h2 style="margin-top:10px">Classic Florence</h2>
+        <p>A bright and welcoming private studio combining traditional Florentine character with practical, comfortable living.</p>
+        <div class="price-large">€1,200 <span style="font-size:1rem;color:var(--muted);font-weight:700">/ month</span></div>
+        <p><b>35 m²</b> · Via dell'Albero 16 · Florence</p>
+        <ul class="checklist">
+          <li>✓ Fully furnished</li><li>✓ Equipped kitchen</li><li>✓ Wi-Fi included</li><li>✓ Washing machine & dryer</li><li>✓ Utilities included</li>
+        </ul>
+        <b>Available from November 2026</b>
+      </div>
+    </div>
+  </section>
+
+  <section id="a2">
+    <div class="container split">
+      <div class="studio-copy">
+        <div class="eyebrow">Studio A2</div>
+        <h2 style="margin-top:10px">Urban & Cozy</h2>
+        <p>A distinctive loft-style studio with a warm atmosphere and smart use of space — ideal for independent living.</p>
+        <div class="price-large">€1,200 <span style="font-size:1rem;color:var(--muted);font-weight:700">/ month</span></div>
+        <p><b>35 m²</b> · Via dell'Albero 16 · Florence</p>
+        <ul class="checklist">
+          <li>✓ Fully furnished</li><li>✓ Equipped kitchen</li><li>✓ Wi-Fi included</li><li>✓ Washing machine & dryer</li><li>✓ Utilities included</li>
+        </ul>
+        <b>Available from November 2026</b>
+      </div>
+      <div class="gallery">
+        <img class="big" src="images/A2.2.jpeg" alt="Studio A2 main view" loading="lazy">
+        <img class="small1" src="images/A2.3.jpeg" alt="Studio A2 detail" loading="lazy">
+        <img class="small2" src="images/A2.4.jpeg" alt="Studio A2 interior" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="a3">
+    <div class="container split">
+      <div class="gallery">
+        <img class="big" src="images/A3.2.jpeg" alt="Studio A3 main view" loading="lazy">
+        <img class="small1" src="images/A3.3.jpeg" alt="Studio A3 detail" loading="lazy">
+        <img class="small2" src="images/A3.5.jpeg" alt="Studio A3 interior" loading="lazy">
+      </div>
+      <div class="studio-copy">
+        <div class="eyebrow">Studio A3</div>
+        <h2 style="margin-top:10px">Character & Charm</h2>
+        <p>A charming studio with a unique layout and plenty of character — your private base for experiencing Florence.</p>
+        <div class="price-large">€1,200 <span style="font-size:1rem;color:var(--muted);font-weight:700">/ month</span></div>
+        <p><b>35 m²</b> · Via dell'Albero 16 · Florence</p>
+        <ul class="checklist">
+          <li>✓ Fully furnished</li><li>✓ Equipped kitchen</li><li>✓ Wi-Fi included</li><li>✓ Washing machine & dryer</li><li>✓ Utilities included</li>
+        </ul>
+        <b>Available from November 2026</b>
+      </div>
+    </div>
+  </section>
+
+  <section id="included" class="included">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" style="color:var(--gold)">Simple & all-inclusive</div>
+        <h2>Everything you need, ready for you.</h2>
+        <p>Move in, unpack and enjoy Florence. One clear monthly price, without complicated utility bills.</p>
+      </div>
+      <div class="amenities">
+        <div class="amenity"><b>01</b><strong>FULLY FURNISHED</strong><p>Your private space is ready to live in.</p></div>
+        <div class="amenity"><b>02</b><strong>EQUIPPED KITCHEN</strong><p>Cook independently with the essentials already there.</p></div>
+        <div class="amenity"><b>03</b><strong>WI-FI INCLUDED</strong><p>Stay connected for study, work and everyday life.</p></div>
+        <div class="amenity"><b>04</b><strong>WASHER & DRYER</strong><p>Laundry facilities included for extra convenience.</p></div>
+        <div class="amenity"><b>05</b><strong>ALL BILLS INCLUDED</strong><p>One clear monthly price, with utilities included.</p></div>
+        <div class="amenity"><b>06</b><strong>PRIVATE STUDIO</strong><p>Your own space, with no shared kitchen or bathroom.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Location</div>
+        <h2>Live Florence. Make it yours.</h2>
+        <p>All three studios are located at <b>Via dell'Albero 16, Florence, Italy</b>.</p>
+      </div>
+      <div class="location">
+        <div class="map-placeholder">
+          <div>
+            <strong>📍 Via dell'Albero 16</strong>
+            <p>Florence, Italy</p>
+            <p style="font-size:.9rem">Add a Google Maps embed or a map screenshot here if desired.</p>
+          </div>
+        </div>
+        <div class="location-card">
+          <div class="eyebrow">At a glance</div>
+          <h3 style="margin-top:10px">A convenient Florence base</h3>
+          <ul class="checklist">
+            <li>📍 Via dell'Albero 16</li>
+            <li>🎓 University: <b>[ADD DISTANCE]</b></li>
+            <li>🚆 Santa Maria Novella: <b>[ADD DISTANCE]</b></li>
+            <li>🏛️ Historic centre: <b>[ADD DISTANCE]</b></li>
+            <li>🛒 Supermarket: <b>[ADD DISTANCE]</b></li>
+          </ul>
+          <p style="color:var(--muted)">Replace the bracketed distances with the exact walking times before publishing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <div class="eyebrow" style="color:var(--gold)">Ready to make Florence home?</div>
+          <h2 style="margin-top:10px">Check availability.</h2>
+          <p>Ask about A1, A2 or A3, request more information or arrange a viewing.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-gold" href="https://wa.me/YOURNUMBER">WHATSAPP US →</a>
+          <a class="btn btn-outline" href="mailto:YOUREMAIL@example.com">EMAIL US →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div><b>Your Florence Home</b> · Via dell'Albero 16, Florence</div>
+    <div>€1,200/month · All bills included · Available November 2026</div>
+  </div>
+</footer>
+</body>
+</html>
